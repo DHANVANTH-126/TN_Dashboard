@@ -26,7 +26,7 @@ api.interceptors.response.use(
       const refreshToken = useAuthStore.getState().refreshToken;
       if (refreshToken) {
         try {
-          const res = await axios.post('/api/auth/refresh', { refreshToken });
+          const res = await axios.post(`${API}/api/auth/refresh`, { refreshToken });
           useAuthStore.getState().setTokens(res.data.accessToken, res.data.refreshToken);
           originalRequest.headers.Authorization = `Bearer ${res.data.accessToken}`;
           return api(originalRequest);
