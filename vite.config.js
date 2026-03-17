@@ -7,11 +7,11 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'https://tn-impact-backend.onrender.com',
+        target: 'localhost:5000',
         changeOrigin: true,
       },
       '/uploads': {
-        target: 'https://tn-impact-backend.onrender.com',
+        target: 'localhost:5000',
         changeOrigin: true,
       },
     },
